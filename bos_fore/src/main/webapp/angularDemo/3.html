@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js事件绑定</title>
+		<script type="text/javascript" src="../js/angular.min.js" ></script>
+	</head>
+	<body>
+		<div ng-app="myapp" ng-controller="control">
+			<div>
+				<input type="text" id="name" ng-model="id" />
+				<!--<input type="button" value="清空" ng-click="id=''" />-->
+				<input type="button" value="清空" ng-click="clearVal()" />
+			</div>
+			<div>
+				hello,{{id}}				
+			</div>
+		</div>
+		<script type="text/javascript">
+			var myapp = angular.module("myapp",[]);
+			myapp.controller("control",["$scope",function($scope){
+				$scope.id="adsfsadfsadfasdf";
+				
+				$scope.clearVal=function(){
+					$scope.id="";
+				}
+			}]);
+			
+		</script>
+	</body>
+</html>

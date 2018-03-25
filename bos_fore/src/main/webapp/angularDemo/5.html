@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>angularjs路由功能</title>
+		 <script type="text/javascript" src="../js/angular.min.js" ></script>
+		 <script type="text/javascript" src="../js/angular-route.min.js" ></script>
+	</head>
+	<body>
+		<div ng-app="myapp">
+			<div>
+				<h1>head</h1>
+				<a href="#/a">1</a>
+				<a href="#/b">2</a>
+				<a href="#/c">3</a>
+			</div>
+			<div ng-view>
+				
+			</div>
+			<div>
+				<h1>foot</h1>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var myapp = angular.module("myapp",["ngRoute"]);
+		myapp.config(["$routeProvider",function($routeProvider){
+			$routeProvider.when("/a",{
+				templateUrl:"5_1.html"				
+			}).when("/b",{
+				templateUrl:"5_2.html"				
+			}).when("/c",{
+				templateUrl:"5_3.html"				
+			}).otherwise({
+				redirectTo:"5_1.html"
+			})
+		}]);
+	</script>
+</html>
